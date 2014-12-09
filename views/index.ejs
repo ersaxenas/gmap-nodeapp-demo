@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery.fileupload.css">
+</head>
+<style type="text/css">
+    html, body, #map-canvas {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfoJD6fse5dPAxGY_qG6sBa6HDevLYpkE"></script>
+<script type="text/javascript" src="/javascripts/dmaputils.js"></script>
+<script type="text/javascript" src="/javascripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/javascripts/appmain.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.fileupload.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>NodeJs Demo</h1>
+</header>
+
+<nav>
+    GMap<br>
+    Bonsai - Url Shortner
+</nav>
+
+<section>
+
+    <div id="gmappage">
+        <table id="locctrl">
+            <tr>
+                <td><label>States: </label></td>
+                <td><select name="cstates" id="cstates">
+                        <option>Slower</option>
+                        <option>Slow</option>
+                        <option selected="selected">Medium</option>
+                        <option>Fast</option>
+                        <option>Faster</option>
+                    </select></td>
+                <td><label>City: </label></td>
+                <td><select name="ccity" id="ccity">
+                        <option>Slower</option>
+                        <option>Slow</option>
+                        <option selected="selected">Medium</option>
+                        <option>Fast</option>
+                        <option>Faster</option>
+                    </select></td>
+                <td><label>Zip Code: </label></td>
+                <td><select name="czip" id="czip">
+                        <option>Slower</option>
+                        <option>Slow</option>
+                        <option selected="selected">Medium</option>
+                        <option>Fast</option>
+                        <option>Faster</option>
+                    </select></td>
+                <td style="float:right">
+                  <span class="btn btn-success fileinput-button">
+                  <i class="glyphicon glyphicon-plus"></i>
+                  <span>Upload CSV</span>
+                   <!-- The file input field used as target for the file upload widget -->
+                  <input id="fileupload" type="file" name="files[]" multiple/>
+                  </span>
+                </td>
+            </tr>
+        </table>
+
+        <fieldset>
+            <div id="dmap">
+            </div>
+        </fieldset>
+    </div>
+
+</section>
+
+<footer>
+    <div id="cpryt">
+        Copyright © Rajeev Rumale
+    </div>
+    <div id='ftnotes'>
+        Dedicated to Rajeev Rumale, Inspired by Hari Kishore<br>
+        Developed by Saurabh Saxena
+    </div>
+</footer>
+</body>
+</html>
