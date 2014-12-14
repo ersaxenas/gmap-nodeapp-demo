@@ -7,8 +7,9 @@ var bodyParser = require('body-parser');
 var multer  = require('multer');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var csvupload = require('./routes/csvupload');
+var stateservice = require('./routes/stateservice');
+var urlshortner = require('./routes/urlshortner');
 global.approotpath = __dirname;
 
 var app = express();
@@ -16,6 +17,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -32,8 +34,13 @@ app.use(multer({
 }));
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/upload',csvupload.uploadfile);
+app.use('/states',stateservice.getAllStates);
+app.use('/getcoordinates',stateservice.getCoordinates);
+app.use('/city',stateservice.getCityForStates);
+app.use('/zipcode',stateservice.getZipCodesForCity);urlshortner
+app.use('/encode',urlshortner.ecnodeurl);
+app.use('/decode',urlshortner.decodeurl);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
